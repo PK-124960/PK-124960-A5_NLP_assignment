@@ -79,16 +79,16 @@ The **AI Response Evaluator** allows users to:
 ## 📸 Screenshots
 
 ### 🏙️ Example 1: Simple Question
-![Test01](images/Test01.png)
+![Test01](results/Test01.png)
 
 ### 💬 Example 2: Casual Conversation
-![Test02](images/Test02.png)
+![Test02](results/Test02.png)
 
 ### 🍕 Example 3: Opinion-based Question
-![Test03](images/Test03.png)
+![Test03](results/Test03.png)
 
 ### 🐍 Example 4: Coding-related Question
-![Test04](images/Test04.png)
+![Test04](results/Test04.png)
 
 ---
 
