@@ -1,72 +1,98 @@
-# 🤖 AI Response Evaluator
+# 🤖 Optimization Human Preference 
 
-A **Streamlit-based web application** that demonstrates the capabilities of an AI model trained for **response generation and evaluation**. The AI generates responses based on user input and provides a confidence score using a **reward model**.
+## 📌 Overview  
+This project implements an **AI Response Evaluator** using a **GPT-2 model fine-tuned with Direct Preference Optimization (DPO)**.  
 
----
+The model:  
+- Generates **AI responses** based on user input.  
+- Evaluates **response relevance** using a trained **reward model**.  
+- Provides a **confidence score** (higher means better relevance).  
 
-## 📌 **Assignment Overview**
-This project is part of the **Optimization Human Preference Assignment**. The objective is to train an **AI model** using **Direct Preference Optimization (DPO)** and evaluate AI-generated responses.
-
-The assignment consists of four key tasks:
-1. **Finding a Suitable Dataset**
-2. **Training a Model with DPOTrainer**
-3. **Pushing the Model to Hugging Face Model Hub**
-4. **Developing a Web Application**
+The project is built using **Python**, incorporating **PyTorch, Transformers (Hugging Face), Streamlit**, and other essential libraries.
 
 ---
 
-## 🎯 **Task 1: Finding a Suitable Dataset**
-✔️ **Selected Dataset:** `openai/summarize_from_feedback`
-
-### ✅ **Steps Taken:**
-- Selected a **publicly available dataset** for preference optimization tasks.
-- Ensured **data preprocessing** was correctly implemented.
-- Documented the **dataset source** and preprocessing steps.
-
-📂 **Dataset Used:** [OpenAI Summarization Feedback Dataset](https://huggingface.co/datasets/openai/summarize_from_feedback)
+## ✨ Features  
+- ✅ **Fine-tuned GPT-2 model** for response generation.  
+- ✅ **Reward model** that scores AI-generated responses.  
+- ✅ **Modern & Interactive Web UI** built with Streamlit.  
+- ✅ **Customizable for different preference datasets**.  
+- ✅ **Easy deployment** with local model usage or Hugging Face integration.  
 
 ---
 
-## 🔥 **Task 2: Training a Model with DPOTrainer**
-✔️ **Model Used:** `GPT-2`  
-✔️ **Training Framework:** `Hugging Face Transformers`  
-✔️ **Training Method:** `Direct Preference Optimization (DPO)`
+## Project Structure
+```
+📂 Optimization Human Preference 
+│── reward_model_dpo.pth                # Trained Reward Model (Task 2)
+│── app.py                              # Streamlit-based web application (Task 4)
+│── A5_NLP-Assignment.ipynb             # Full training pipeline (Tasks 1, 2, 3)
+│── 📂 results
+│   ├── Test01.png                        # Sample prediction result 1
+│   ├── Test02.png                        # Sample prediction result 2
+│   ├── Test03.png                        # Sample prediction result 3
+│   ├── Test04.png                        # Sample prediction result 4
+│── README.md                             # Project Documentation
 
-### 🏗️ **Steps Taken:**
-1. Implemented the **DPOTrainer** function using a **pre-trained GPT model**.
-2. Fine-tuned the model using the **selected dataset**.
-3. Experimented with **hyperparameters** and documented training performance.
-
-📜 **Training Code:** See `A5_NLP-Assignment.ipynb`  
-📈 **Training Results:** `reward_model.pth`
-
----
-
-## 🚀 **Task 3: Pushing the Model to Hugging Face Model Hub**
-✔️ **Model Uploaded to Hugging Face**  
-✔️ **Public Repository Created**  
-✔️ **Link to Model Added in Documentation**
-
-🔗 **Model Link:** [Ponkrit/A5_NLP_Assignment](https://huggingface.co/Ponkrit/A5_NLP_Assignment)
+```
 
 ---
 
-## 🌐 **Task 4: Web Application Development**
-✔️ **Framework Used:** `Streamlit`  
-✔️ **Functionality:** Users input text and receive **AI-generated responses** with a **confidence score**.
-
-### 🏗️ **Steps Taken:**
-1. Developed a **Streamlit web app** to interact with the trained model.
-2. Allowed users to enter a **text prompt**.
-3. AI generates **responses** and provides a **confidence score**.
-4. Designed a **modern and colorful UI** for **user-friendly experience**.
-
-📜 **Web App Code:** `app.py`
-
----
-
-## 💻 **How to Run the Application**
-### 1️⃣ **Clone the Repository**
+## Installation
+### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/AI-Response-Evaluator.git
-cd AI-Response-Evaluator
+git clone https://github.com/PK-124960/PK-124960-A5_NLP_assignment.git
+cd PK-124960-A5_NLP_assignment
+```
+### 2. Download or Use Local Model
+- **Option 1:** Download the trained model from Hugging Face:
+git lfs install
+git clone https://huggingface.co/Ponkrit/A5_NLP_Assignment
+mv A5_NLP_Assignment/reward_model.pth models/
+- **Option 2:** Use a locally fine-tuned model.
+
+```
+
+---
+
+## Running the Web App
+To launch the Streamlit web application:
+```bash
+streamlit run app.py
+```
+This will open a browser where you can input a text prompt and get a response with a confidence score.
+
+---
+
+## Model Training and Evaluation
+### **Task 1: Finding a Suitable Dataset**
+- **Dataset Used:** openai/summarize_from_feedback
+- **Steps Taken:**
+```
+    - Selected a dataset suitable for **preference optimization.**
+    - Ensured **proper preprocessing.**
+    - Documented **dataset sources** and cleaning process.
+📂 **Dataset Source:** Hugging Face - Summarization Feedback
+```
+
+### **Task 2: Fine-tuning SBERT for NLI**
+- **Dataset Used:** openai/summarize_from_feedback
+- Training loss over 10 epochs:
+```
+Epoch 1 Loss: 0.8682
+Epoch 2 Loss: 0.7968
+...
+Epoch 10 Loss: 0.1715
+```
+- The trained model was saved as **sbert_model.pth** and **classifier_head.pth**.
+
+### **Task 3: Model Evaluation**
+- Evaluated on the **SNLI test set**, achieving the following scores:
+```
+Accuracy: 85.42%
+Precision: 85.10%
+Recall: 85.30%
+F1-score: 85.20%
+```
+
+---
