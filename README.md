@@ -1,12 +1,23 @@
-✅ 1. Project Title & Description
-Project Name: AI Response Evaluator
-Description: A Streamlit web application that evaluates AI-generated responses based on user input. It generates text responses and assigns a confidence score using a trained reward model.
+# 🤖 AI Response Evaluator
 
-✅ 2. Features
-List the key functionalities of your app:
+A **Streamlit-based web application** that demonstrates the capabilities of an AI model trained for **response generation and evaluation**. This application allows users to input text, generate an AI response, and evaluate its quality using a trained **reward model**.
 
-✅ AI-powered response generation using GPT-2.
-✅ Response quality evaluation with a reward model.
-✅ User-friendly modern UI with Streamlit.
-✅ Works with local models and Hugging Face models.
-✅ Supports custom user input and interactive results.
+🚀 **Live Demo (If applicable)**: [Click Here](#) *(Replace with deployment link if available)*
+
+---
+
+## ✨ Features
+✔️ **AI-Powered Response Generation** - Generates relevant responses for user prompts.  
+✔️ **Response Quality Evaluation** - Provides a confidence score (0 to 1) for the response.  
+✔️ **Modern & Stylish UI** - Beautiful and user-friendly interface.  
+✔️ **Supports Local & Hugging Face Models** - Load models from Hugging Face or use a locally trained model.  
+✔️ **Built with Streamlit & PyTorch** - Fast and easy-to-use web-based implementation.  
+
+---
+
+## 🛠️ Installation
+
+### 1️⃣ **Clone the Repository**
+```bash
+git clone https://github.com/your-username/AI-Response-Evaluator.git
+cd AI-Response-Evaluator
